@@ -1,4 +1,5 @@
 function map(arr: number[], fn: (n: number, i: number) => number): number[] {
+    /** first think */
     // // case 1 : empty array or fn return same result
     // const len = arr.length
     // if(len === 0) {
@@ -26,6 +27,25 @@ function map(arr: number[], fn: (n: number, i: number) => number): number[] {
 
     // }
     
-    // use map
-    return arr.map(fn)
+    /** second think */
+    // // use map
+    // return arr.map(fn)
+
+    /** third think */
+    // const funcType: number | string =  fn
+    // const result: number[] | void = arr.forEach(fn)
+    // if(funcType === "number" || funcType === "undefined") {
+    //     return arr
+    // }
+    // else {
+    //     return result
+    // }
+
+    /** forth think */
+    const result = []
+    for(let i = 0; i < arr.length; i++) {
+        const calc = fn(arr[i], i)
+        result.push(calc)
+    }
+    return result
 };
