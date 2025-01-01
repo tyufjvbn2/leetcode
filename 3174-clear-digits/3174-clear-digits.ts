@@ -1,4 +1,5 @@
 function clearDigits(s: string): string {
+    /*
     // get string array
     const sArr = s.split("")
 
@@ -14,4 +15,18 @@ function clearDigits(s: string): string {
     }, s)
 
     return result
+    */
+
+    const output: string[] = [];
+    let digitCount = 0;
+    for (let i = s.length - 1; i >= 0; i--) {
+        if (!isNaN(parseInt(s[i]))) {
+            digitCount++;
+        } else if (digitCount > 0) {
+            digitCount--;
+        } else {
+            output.push(s[i]);
+        }
+    }
+    return output.reduce((str, char) => char + str, '');
 };
