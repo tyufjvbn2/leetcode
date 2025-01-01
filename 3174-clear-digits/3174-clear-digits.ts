@@ -1,5 +1,4 @@
 function clearDigits(s: string): string {
-    /*
     // get string array
     const sArr = s.split("")
 
@@ -15,7 +14,9 @@ function clearDigits(s: string): string {
     }, s)
 
     return result
-    */
+
+    /**
+     * best time complexity case
 
     const output: string[] = [];
     let digitCount = 0;
@@ -29,4 +30,5 @@ function clearDigits(s: string): string {
         }
     }
     return output.reduce((str, char) => char + str, '');
+     */
 };
