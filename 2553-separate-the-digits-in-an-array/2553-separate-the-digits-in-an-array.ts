@@ -10,4 +10,10 @@ function separateDigits(nums: number[]): number[] {
     }, [])
 
     return numArr
+
+    /*
+     * best practice
+     *
+     * return nums.join('').split('').map(Number)
+     */
 };
