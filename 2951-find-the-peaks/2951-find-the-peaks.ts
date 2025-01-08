@@ -1,4 +1,5 @@
 function findPeaks(mountain: number[]): number[] {
+    /* first logic */
     let mid: number = 0
     const result: number[] = []
 
@@ -32,4 +33,12 @@ function findPeaks(mountain: number[]): number[] {
     })
 
     return result
+
+    /** best practice logic */
+    // for (let i = 1; i < mountain.length - 1; i++) {
+    //     if (mountain[i] > mountain[i - 1] && mountain[i] > mountain[i + 1]) {
+    //         result.push(i);
+    //     }
+    // }
+    // return result
 };
