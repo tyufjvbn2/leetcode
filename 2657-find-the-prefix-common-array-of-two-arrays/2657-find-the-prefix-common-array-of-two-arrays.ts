@@ -29,4 +29,24 @@ function findThePrefixCommonArray(A: number[], B: number[]): number[] {
     }
 
     return result
+
+    /** best practice */
+    // const povtor = new Array(A.length + 1).fill(0); // compare array
+    // const result = [];
+    // let count = 0;
+
+    // for(let i = 0; i < A.length; i++) {
+    //     povtor[A[i]]++; // make index as number and element is count of its number
+    //     povtor[B[i]]++;
+
+    //     if(A[i] === B[i]) {
+    //         count++;    // when the number of each array is same, add 1 on count
+    //     } else {
+    //         if(povtor[A[i]] === 2) count++; // in compare array, count of number is 2, add 1
+    //         if(povtor[B[i]] === 2) count++;
+    //     }
+
+    //     result.push(count)
+    // }
+    // return result
 };
