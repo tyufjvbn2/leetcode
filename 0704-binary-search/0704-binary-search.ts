@@ -27,4 +27,26 @@ function search(nums: number[], target: number): number {
     }
 
     return log(nums, 0)
+    
+    // best practice
+    // let left = 0, right = nums.length - 1, old;
+    // let index = right;
+    
+    // while (nums[index] !== target) {
+    //     old = index;
+    //     index = left + Math.floor((right - left) / 2);
+        
+    //     if (index === old) return -1;
+    //     if (nums[index] > target) {
+    //         right = index;
+    //         continue;
+    //     }
+    //     if (nums[index] < target) {
+    //         left = index;
+    //         continue;
+    //     }
+        
+    // }
+    
+    // return index;
 };
