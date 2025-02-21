@@ -3,8 +3,10 @@ function missingNumber(nums: number[]): number {
 
     let result: number = sorted.length
 
+    // [1, 2, 3.....], [1, 2]
     if (nums[0] === 1) {
-        result = 0    
+        result = 0
+        return result    
     }
 
     // 1,2,3,5
