@@ -7,6 +7,7 @@ function missingNumber(nums: number[]): number {
         result = 0    
     }
 
+    // 1,2,3,5
     for (let i = 1; i < sorted.length; i++) {
         if (sorted[i] - sorted[i - 1] > 1) {
             result = sorted[i] - 1
