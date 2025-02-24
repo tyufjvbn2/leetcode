@@ -12,37 +12,50 @@
  * }
  */
 
-function maxDepth(root: TreeNode | null): number {
+// function maxDepth(root: TreeNode | null): number {
+//     if(!root) {
+//         return 0
+//     }
+//     else {   
+//         let depth: number = 0
+
+//         // this.val not 0 -> depth + 1
+//         // this.left && this.right both null -> return depth
+//         // search left||right -> give depth
+//         // final depth -> Math.max(left depth, right depth)
+
+//         function depChecker (node: TreeNode, depthNum: number): number {
+//             let curDepth = depthNum
+//             if(!node) {
+//                 return curDepth
+//             }
+//             if(node.val !== undefined ) {
+//                 curDepth += 1
+//             }
+//             if(!node.left && !node.right) {
+//                 return curDepth
+//             }
+//             else {
+//                 return Math.max(depChecker(node.left, curDepth), depChecker(node.right, curDepth))
+//             }
+//         }
+
+//         return depChecker(root, 0)
+//     }
+// };
+
+function maxDepth(root: TreeNode | null, depth:number = 0): number {
     if(!root) {
-        return 0
+        return depth
     }
     else {   
-        let depth: number = 0
+        depth+= 1
 
-        // this.val not 0 -> depth + 1
-        // this.left && this.right both null -> return depth
-        // search left||right -> give depth
-        // final depth -> Math.max(left depth, right depth)
-
-        function depChecker (node: TreeNode, depthNum: number): number {
-            let curDepth = depthNum
-            if(!node) {
-                return curDepth
-            }
-            // console.log("val check : ", node.val)
-            // console.log("left check : ", !!node.left)
-            // console.log("right check : ", !!node.right)
-            if(node.val !== undefined ) {
-                curDepth += 1
-            }
-            if(!node.left && !node.right) {
-                return curDepth
-            }
-            else {
-                return Math.max(depChecker(node.left, curDepth), depChecker(node.right, curDepth))
-            }
+        if(!root.left && !root.right) {
+            return depth
         }
-
-        return depChecker(root, 0)
+        else {
+            return Math.max(maxDepth(root.left, depth), maxDepth(root.right, depth))
+        }
     }
 };
