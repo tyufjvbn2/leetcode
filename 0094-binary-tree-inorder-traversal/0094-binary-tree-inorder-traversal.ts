@@ -21,7 +21,6 @@ function inorderTraversal(root: TreeNode | null, arr: number[] = []): number[] {
     // feedback condition
     else {
         // left arr part
-        // const left: number[] = inorderTraversal(this.left, arr)
         arr.unshift(...inorderTraversal(root.left, []))
         // self val
         arr.push(root.val)
