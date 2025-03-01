@@ -17,8 +17,10 @@ function intersect(nums1: number[], nums2: number[]): number[] {
     }
 
     for(let i =0; i<small.length; i++) {
-        if(large.includes(small[i])) {
+        const findI: number = large.indexOf(small[i])
+        if(findI !== -1) {
             result.push(small[i])
+            large.splice(findI, 1)
         }
     }
 
