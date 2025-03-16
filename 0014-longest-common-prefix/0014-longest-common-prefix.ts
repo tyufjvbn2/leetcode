@@ -4,7 +4,17 @@ function longestCommonPrefix(strs: string[]): string {
             ini = cur.split("")
         }
         else {
-            ini = cur.split("").filter((el, i) => el === ini[i])
+            const arr: string[] = []
+            const min: number = Math.min(cur.length, ini.length)
+            for(let i = 0; i< min; i++) {
+                if(cur[i] !== ini[i]) {
+                    break
+                }
+                else {
+                    arr.push(cur[i])
+                }
+            }
+            ini = arr
         }
         return ini
     }, [])
