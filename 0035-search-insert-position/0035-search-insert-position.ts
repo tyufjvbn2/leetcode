@@ -5,9 +5,6 @@ function searchInsert(nums: number[], target: number, index: number = 0): number
 
     const middleI: number = nums.length%2 ? Math.floor(nums.length/2) : nums.length/2 -1
     const middle: number = nums[middleI]
-    console.log("array check : ", nums)
-    console.log("middle check : ", middle)
-    console.log("index check : ", index)
 
     if(nums.length === 0) {
         return index
