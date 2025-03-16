@@ -26,5 +26,10 @@ function isValid(s: string): boolean {
         }
     }
 
+    ///
+
+    //""
+    //[]
+
     return compare.length ? false : true
 };
